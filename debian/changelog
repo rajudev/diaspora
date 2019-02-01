@@ -3,8 +3,10 @@ diaspora (0.7.9.0-1) experimental; urgency=medium
   * New upstream version 0.7.9.0
   * embedding the gems compass, compass-rails & sass in debian/gems-compat
   * Adding patch for embedding the new gems in debian/gems-compat.
+  * adding path for embedded gems in the debian/install file
+  * using wrap-and-sort to correct formating of files inside the debian directory
 
- -- Raju Devidas <rajudev@disroot.org>  Sat, 02 Feb 2019 01:14:07 +0530
+ -- Raju Devidas <rajudev@disroot.org>  Sat, 02 Feb 2019 01:18:30 +0530
 
 diaspora (0.7.8.0-1) experimental; urgency=medium
 
