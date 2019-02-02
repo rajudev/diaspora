@@ -1,14 +1,14 @@
-minor versions of stable libraries can be relaxed
-
+diff --git a/Gemfile b/Gemfile
+index b7ae543c9..8d1ace4b0 100644
 --- a/Gemfile
 +++ b/Gemfile
-@@ -2,204 +2,204 @@
+@@ -2,204 +2,192 @@
  
  source "https://rubygems.org"
  
 -gem "rails", "5.1.6"
+-
 +gem "rails", "~> 5.1",">= 5.1.6"
- 
  # Legacy Rails features, remove me!
  # responders (class level)
 -gem "responders", "2.4.0"
@@ -18,25 +18,25 @@ minor versions of stable libraries can be relaxed
  
 -gem "unicorn", "5.4.1", require: false
 -gem "unicorn-worker-killer", "0.4.4"
+-
 +gem "unicorn", "~> 5.4", ">= 5.4.1", require: false
 +gem "unicorn-worker-killer", "~> 0.4.4"
- 
  # Federation
  
 -gem "diaspora_federation-json_schema", "0.2.5"
 -gem "diaspora_federation-rails", "0.2.5"
+-
 +gem "diaspora_federation-json_schema", "~> 0.2.5"
 +gem "diaspora_federation-rails", "~> 0.2.5"
- 
  # API and JSON
  
 -gem "acts_as_api", "1.0.1"
 -gem "json",        "2.1.0"
 -gem "json-schema", "2.8.1"
+-
 +gem "acts_as_api", "~> 1.0",">= 1.0.1"
 +gem "json",        "~> 2.1"
 +gem "json-schema", "~> 2.8",">= 2.8.1"
- 
  # Authentication
  
 -gem "devise", "4.5.0"
@@ -63,8 +63,8 @@ minor versions of stable libraries can be relaxed
  # Compression
  
 -gem "uglifier", "4.1.19"
+-
 +gem "uglifier", "~> 4.1",">= 4.1.19"
- 
  # Configuration
  
 -gem "configurate", "0.3.1"
@@ -79,17 +79,17 @@ minor versions of stable libraries can be relaxed
  
 -gem "autoprefixer-rails",     "8.6.5"
 -gem "bootstrap-sass",         "3.3.7"
--gem "bootstrap-switch-rails", "3.3.4"
+-gem "bootstrap-switch-rails", "3.3.3" # 3.3.4 is broken, see https://github.com/Bttstrp/bootstrap-switch/issues/691
 -gem "compass-rails",          "3.1.0"
 -gem "sass-rails",             "5.0.7"
 -gem "sprockets-rails",        "3.2.1"
+-
 +gem "autoprefixer-rails",     "~> 8.6",">= 8.6.5"
 +gem "bootstrap-sass",         "~> 3.3",">= 3.3.7"
-+gem "bootstrap-switch-rails", "~> 3.3",">= 3.3.4"
++gem "bootstrap-switch-rails", "~> 3.3",">= 3.3.3" # 3.3.4 is broken, see https://github.com/Bttstrp/bootstrap-switch/issues/691
 +gem "compass-rails",          "~> 3.1"
 +gem "sass-rails",             "~> 5.0",">= 5.0.7"
 +gem "sprockets-rails",        "~> 3.2",">= 3.2.1"
- 
  # Database
  
  group :mysql, optional: true do
@@ -103,8 +103,8 @@ minor versions of stable libraries can be relaxed
  
  
 -gem "activerecord-import", "0.27.0"
+-
 +gem "activerecord-import", "~> 0.27.0"
- 
  # File uploading
  
 -gem "carrierwave", "1.2.3"
@@ -137,9 +137,7 @@ minor versions of stable libraries can be relaxed
  source "https://rails-assets.org" do
 -  gem "rails-assets-jquery",                              "3.3.1" # Should be kept in sync with jquery-rails
 -  gem "rails-assets-jquery.ui",                           "1.11.4"
-+  gem "rails-                                             assets-jquery",                              "~> 3.3",">= 3.3.1" # Should be kept in sync with jquery-rails
-+  gem "rails-assets-jquery.ui",                           "~> 1.11","~> 1.11.4"
- 
+-
 -  gem "rails-assets-highlightjs",                         "9.12.0"
 -  gem "rails-assets-markdown-it",                         "8.4.2"
 -  gem "rails-assets-markdown-it-hashtag",                 "0.4.0"
@@ -153,6 +151,9 @@ minor versions of stable libraries can be relaxed
 -  gem "rails-assets-bootstrap-markdown",                  "2.10.0"
 -  gem "rails-assets-corejs-typeahead",                    "1.2.1"
 -  gem "rails-assets-fine-uploader",                       "5.13.0"
++  gem "rails-assets-jquery",                              "~> 3.3",">= 3.3.1" # Should be kept in sync with jquery-rails
++  gem "rails-assets-jquery.ui",                           "~> 1.11","~> 1.11.4"
++
 +  gem "rails-assets-highlightjs",                         "~> 9.12"
 +  gem "rails-assets-markdown-it",                         "~> 8.4",">= 8.4.2"
 +  gem "rails-assets-markdown-it-hashtag",                 "~> 0.4.0"
@@ -191,15 +192,15 @@ minor versions of stable libraries can be relaxed
 -gem "http_accept_language", "2.1.1"
 -gem "i18n-inflector-rails", "1.0.7"
 -gem "rails-i18n",           "5.1.2"
+-
 +gem "http_accept_language", "~> 2.1",">= 2.1.1"
 +gem "i18n-inflector-rails", "~> 1.0",">= 1.0.7"
 +gem "rails-i18n",           "~> 5.1",">= 5.1.2"
- 
  # Mail
  
 -gem "markerb",             "1.1.0"
+-
 +gem "markerb",             "~> 1.1"
- 
  # Map
 -gem "leaflet-rails",       "1.3.1"
 +gem "leaflet-rails",       "~> 1.3",">= 1.3.1"
@@ -220,8 +221,8 @@ minor versions of stable libraries can be relaxed
  # RTL support
  
 -gem "string-direction", "1.2.1"
+-
 +gem "string-direction", "~> 1.2", ">= 1.2.1"
- 
  # Security Headers
  
 -gem "secure_headers", "6.0.0"
@@ -234,16 +235,16 @@ minor versions of stable libraries can be relaxed
 -gem "omniauth-twitter",   "1.4.0"
 -gem "omniauth-wordpress", "0.2.2"
 -gem "twitter",            "6.2.0"
+-
 +gem "omniauth",           "~> 1.8",">= 1.8.1"
 +gem "omniauth-tumblr",    "~> 1.2"
 +gem "omniauth-twitter",   "~> 1.4"
 +gem "omniauth-wordpress", "~> 0.2.2"
 +gem "twitter",            "~> 6.2"
- 
  # OpenID Connect
 -gem "openid_connect", "1.1.6"
+-
 +gem "openid_connect", "~> 1.1",">= 1.1.6"
- 
  # Serializers
  
 -gem "active_model_serializers", "0.9.7"
@@ -297,7 +298,7 @@ minor versions of stable libraries can be relaxed
  
  # Prevent occasions where minitest is not bundled in
  # packaged versions of ruby. See following issues/prs:
-@@ -208,7 +208,7 @@
+@@ -208,7 +196,7 @@ gem "rubyzip", "1.2.2", require: "zip"
  # https://github.com/discourse/discourse/pull/238
  gem "minitest"
  
@@ -306,15 +307,15 @@ minor versions of stable libraries can be relaxed
  
  # Windows and OSX have an execjs compatible runtime built-in, Linux users should
  # install Node.js or use "therubyracer".
-@@ -220,21 +220,21 @@
+@@ -220,21 +208,20 @@ gem "versionist", "1.7.0"
  group :production do # we don"t install these on travis to speed up test runs
    # Analytics
  
 -  gem "rack-google-analytics", "1.2.0"
 -  gem "rack-piwik",            "0.3.0",  require: "rack/piwik"
+-
 +  gem "rack-google-analytics", "~> 1.2"
 +  gem "rack-piwik",            "~> 0.3.0",  require: "rack/piwik"
- 
    # Process management
  
 -  gem "eye", "0.10.0"
@@ -333,4 +334,4 @@ minor versions of stable libraries can be relaxed
 +  gem "asset_sync", "~> 2.5", require: false
  end
  
- #group :development do
+ group :development do
