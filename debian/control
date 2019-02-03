@@ -15,16 +15,16 @@ Package: diaspora
 Architecture: all
 XB-Ruby-Versions: ${ruby:Versions}
 Pre-Depends: bc
-Depends: bundler (>= 1.9~),
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         ruby | ruby-interpreter,
+         bundler (>= 1.9~),
          diaspora-common (>= 0.6.3.0+debian1),
          fonts-roboto-hinted,
          imagemagick,
          nodejs,
          rake (>= 10.4.2~),
-         # remove me!
-         # responders (class level)
          ruby-responders (>= 2.4~),
-         ruby | ruby-interpreter,
          ruby-activerecord-import (>= 0.27~),
          ruby-bootstrap-sass (>= 3.3.7~),
          ruby-bootstrap-switch-rails (>= 3.3.4~),
@@ -82,89 +82,45 @@ Depends: bundler (>= 1.9~),
          ruby-typhoeus (>= 1.3.1~),
          ruby-unicorn-worker-killer (>= 0.4.4~),
          ruby-will-paginate (>= 3.1.6~),
-         #
          ruby-markdown-it-html5-embed (>= 1.0~),
-         #
          ruby-versionist (>= 1.7~),
-         # # jQuery plugins
          ruby-rails-assets-autosize (>= 4.0.2~),
-         # API and JSON
          ruby-acts-as-api (>= 1.0.1~),
-         # Analytics
          ruby-rack-google-analytics (>= 1.2~),
-         # Appserver
          unicorn (>= 5.4.1~),
-         # Authentication
          ruby-devise (>= 4.5~),
-         # Background processing
          ruby-redis (>= 3.3.5~),
-         # CSS
          ruby-autoprefixer-rails (>= 8.6.5~),
-         # Captcha
          ruby-simple-captcha2 (>= 0.4.3~),
-         # Compression
          ruby-uglifier (>= 2.7.2~),
-         # Configuration
          ruby-configurate (>= 0.3.1~),
-         # Cross-origin resource sharing
          ruby-rack-cors (>= 1.0.2~),
-         # Database
          ruby-pg (>= 1.1.3~),
-         # Federation
          ruby-diaspora-federation-json-schema (>= 0.2.5~),
-         # File uploading
          ruby-carrierwave (>= 1.2.3~),
-         # GUID generation
          ruby-uuid (>= 2.3.9~),
-         # Icons
          ruby-entypo-rails (>= 3.0~),
-         # JavaScript
          ruby-handlebars-assets (>= 2:0.23.1~),
-         # Legacy Rails features,
-         # Localization
          ruby-http-accept-language (>= 2.1.1~),
-         # Logging
          ruby-logging-rails (>= 0.6~),
-         # Mail
          ruby-markerb (>= 1.1~),
-         # Map
          ruby-leaflet-rails (>= 1.3.1~),
-         # OpenID Connect
          ruby-openid-connect (>= 1.1.6~),
-         # Parsing
          ruby-nokogiri (>= 1.8.5~),
-         # Process management
          ruby-eye (>= 0.7-3~),
-         # RTL support
          ruby-string-direction (>= 1.2.1),
-         # Reading and writing zip files
          ruby-zip (>= 1.2.2~),
-         # Redirects
          ruby-rack-rewrite (>= 1.5.1~),
-         # Scheduled processing
          ruby-sidekiq-cron (>= 1.0.4~),
-         # Security Headers
          ruby-secure-headers (>= 6.0~),
-         # Serializers
          ruby-active-model-serializers (>= 0.9.7~),
-         # Services
          ruby-omniauth (>= 1.8.1~),
-         # TODO/Debian
          ruby-jquery-ui-rails (>= 5.0.5~),
-         # Tags
          ruby-acts-as-taggable-on (>= 6.0~),
-         # Third party asset hosting
          ruby-asset-sync,
-         # URIs and HTTP
          ruby-addressable (>= 2.5.2~),
-         # Views
          ruby-gon (>= 6.2.1~),
-         # XMPP chat dependencies
-         ruby-diaspora-prosody-config (>= 0.0.7~),
-         # removing compass-rails from control as we are embedding it
-         # ruby-compass-rails (>= 3.1~),
-         ${misc:Depends},
-         ${shlibs:Depends}
+         ruby-diaspora-prosody-config (>= 0.0.7~)
 Conflicts: diaspora-installer
 Replaces: diaspora-installer
 Suggests: ruby-diaspora-vines
